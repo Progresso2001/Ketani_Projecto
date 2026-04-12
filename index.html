@@ -85,18 +85,11 @@
             transform: scale(1.02);
         }
 
-        .logo-icon {
-            background: linear-gradient(135deg, #ffd966, #ffb347);
-            border-radius: 12px;
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon i {
-            font-size: 1.8rem;
-            color: #1b5e1f;
+        .logo-img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            object-fit: contain;
         }
 
         .logo-text {
@@ -175,6 +168,9 @@
             }
             .site-title h1 {
                 font-size: 1rem;
+            }
+            .logo-img {
+                height: 40px;
             }
         }
 
@@ -700,9 +696,7 @@
     <div class="mode-header">
         <div class="logo-container">
             <div class="logo-wrapper">
-                <div class="logo-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
+                <img src="icone/keta.jpg" alt="KETA Logo" class="logo-img" onerror="this.src='https://placehold.co/50x50?text=KETA'">
                 <div class="logo-text">
                     <div class="keta">KETA</div>
                     <div class="small">COMÉRCIO & PRESTAÇÃO</div>
@@ -723,7 +717,7 @@
     <div id="clientLoginScreen" class="screen">
         <div class="screen-content">
             <div class="card-form login-box">
-                <div class="form-title"><i class="fas fa-sign-in-alt"></i> Acesso Cliente</div>
+                <div class="form-title"><i class="fas fa-sign-in-alt"></i> Acesso Aluno</div>
                 <div class="input-group">
                     <label><i class="fas fa-envelope"></i> Email</label>
                     <input type="email" id="loginEmail" placeholder="seu@email.com">
