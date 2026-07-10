@@ -359,16 +359,52 @@
             text-align: center;
         }
 
+        /* Layout do cliente com grid equilibrado */
+        .client-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .client-full-width {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 992px) {
+            .client-content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .client-content-wrapper {
+            max-height: 450px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .client-content-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .client-content-wrapper::-webkit-scrollbar-track {
+            background: #e8f5e9;
+            border-radius: 10px;
+        }
+
+        .client-content-wrapper::-webkit-scrollbar-thumb {
+            background: #2e7d32;
+            border-radius: 10px;
+        }
+
         .grid-posts {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.2rem;
         }
 
         .media-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             border: 1px solid #e0f0e0;
@@ -384,7 +420,7 @@
 
         .media-preview {
             width: 100%;
-            height: 180px;
+            height: 140px;
             background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
             display: flex;
             flex-direction: column;
@@ -396,26 +432,32 @@
         }
 
         .media-preview i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
 
         .media-card-content {
-            padding: 1rem;
+            padding: 0.8rem;
         }
 
         .media-title {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: #1b5e1f;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
 
         .media-description {
             color: #5d6d5e;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             line-height: 1.4;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .media-date {
+            font-size: 0.65rem;
+            color: #999;
+            margin-bottom: 0.5rem;
         }
 
         .button-group {
@@ -518,7 +560,7 @@
 
         .api-results {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 1rem;
             margin-top: 1rem;
         }
@@ -539,7 +581,7 @@
 
         .api-item img {
             width: 100%;
-            height: 140px;
+            height: 120px;
             object-fit: cover;
             border-radius: 12px;
         }
@@ -688,6 +730,153 @@
             max-width: 450px;
             margin: 2rem auto;
         }
+
+        /* Admin panel layout */
+        .admin-panel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .admin-full-width {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 992px) {
+            .admin-panel-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .admin-content-wrapper {
+            max-height: 450px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .admin-content-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .admin-content-wrapper::-webkit-scrollbar-track {
+            background: #e8f5e9;
+            border-radius: 10px;
+        }
+
+        .admin-content-wrapper::-webkit-scrollbar-thumb {
+            background: #2e7d32;
+            border-radius: 10px;
+        }
+
+        .small-grid-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .small-grid-posts .media-card {
+            max-width: 100%;
+        }
+
+        .small-grid-posts .media-preview {
+            height: 110px;
+        }
+
+        .small-grid-posts .media-preview i {
+            font-size: 2rem;
+        }
+
+        .compact-client-item {
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+        }
+
+        .section-divider {
+            border-top: 2px solid #e8f5e9;
+            margin: 1.5rem 0;
+        }
+
+        /* Estilos para o perfil do cliente */
+        .profile-card {
+            background: #f8fff8;
+            padding: 1rem;
+            border-radius: 16px;
+            border: 1px solid #d0e2d0;
+        }
+
+        .profile-card p {
+            margin: 0.3rem 0;
+        }
+
+        /* Badge de notícia */
+        .news-badge {
+            background: #2e7d32;
+            color: white;
+            font-size: 0.6rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.3rem;
+        }
+
+        .admin-badge {
+            background: #e67e22;
+            color: white;
+            font-size: 0.55rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.3rem;
+            margin-left: 0.3rem;
+        }
+
+        /* Estilo para o formulário de publicação do admin */
+        .admin-publish-form {
+            background: #f0f7f0;
+            padding: 1rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            border: 1px solid #d0e2d0;
+        }
+
+        .admin-publish-form .input-group {
+            margin-bottom: 0.8rem;
+        }
+
+        .admin-publish-form .btn-primary {
+            width: auto;
+            padding: 0.6rem 1.5rem;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Estilo para a área de publicar notícias no admin */
+        .publish-news-area {
+            background: #f0f7f0;
+            padding: 1.2rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            border: 2px solid #2e7d32;
+        }
+
+        .publish-news-area h4 {
+            color: #1b5e1f;
+            margin-bottom: 0.8rem;
+        }
+
+        .publish-news-area .input-group {
+            margin-bottom: 0.8rem;
+        }
+
+        .publish-news-area .btn-primary {
+            width: auto;
+            padding: 0.6rem 1.5rem;
+        }
     </style>
 </head>
 <body>
@@ -724,7 +913,7 @@
                 </div>
                 <div class="input-group">
                     <label><i class="fas fa-lock"></i> Senha</label>
-                    <input type="password" id="loginPassword" placeholder="Senha de 6 dígitos">
+                    <input type="password" id="loginPassword" placeholder="Senha de 8 caracteres">
                 </div>
                 <button class="btn-primary" id="doLoginBtn"><i class="fas fa-sign-in-alt"></i> Entrar</button>
                 <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem;">
@@ -746,9 +935,9 @@
                     <div class="input-group"><label><i class="fas fa-calendar-alt"></i> Idade</label><input type="number" id="regIdade" placeholder="18" min="18"></div>
                     <div class="input-group"><label><i class="fas fa-envelope"></i> Email</label><input type="email" id="regEmail" placeholder="seu@email.com"></div>
                     <div class="input-group">
-                        <label><i class="fas fa-lock"></i> Senha (6 dígitos)</label>
-                        <input type="password" id="regPassword" placeholder="Ex: Abc123" maxlength="6">
-                        <div class="password-hint"><i class="fas fa-info-circle"></i> A senha deve ter exatamente 6 dígitos, contendo pelo menos 1 letra maiúscula, 1 minúscula e 1 número.</div>
+                        <label><i class="fas fa-lock"></i> Senha (8 caracteres)</label>
+                        <input type="password" id="regPassword" placeholder="Ex: Abc@1234">
+                        <div class="password-hint"><i class="fas fa-info-circle"></i> A senha deve ter exatamente 8 caracteres, contendo pelo menos 1 letra maiúscula, 1 minúscula, 1 número e 1 símbolo (@, #, $, !, etc).</div>
                     </div>
                     <div class="checkbox-term">
                         <input type="checkbox" id="termosCheck">
@@ -806,7 +995,7 @@
                     <div class="file-upload-area" id="fileUploadZone">
                         <i class="fas fa-cloud-upload-alt fa-2x"></i>
                         <p>Clique para carregar comprovativo de transferência bancária (JPG, PNG, PDF)</p>
-                        <p style="font-size:0.75rem; color:#e74c3c;"><i class="fas fa-exclamation-triangle"></i> Não são aceitas fotos pessoais - apenas comprovativos bancários!</p>
+                        <p style="font-size:0.75rem; color:#e74c3c;"><i class="fas fa-exclamation-triangle"></i> Apenas comprovativos bancários são aceitos! Fotos pessoais serão rejeitadas.</p>
                         <input type="file" id="receiptFileInput" accept="image/*,.pdf" style="display:none;">
                         <div id="filePreview"></div>
                     </div>
@@ -844,15 +1033,29 @@
                 <div id="videoResults" class="api-results"></div>
             </div>
 
-            <h3><i class="fas fa-globe"></i> Conteúdo Oficial</h3>
-            <div id="clientGlobalContent" class="grid-posts"></div>
+            <!-- Conteúdo em Grid equilibrado -->
+            <div class="client-content-grid">
+                <!-- Notícias do Mundo (Apenas vídeos e livros - SEM NOTÍCIAS) -->
+                <div class="client-list">
+                    <h3><i class="fas fa-globe"></i> Notícias do Mundo</h3>
+                    <div class="client-content-wrapper">
+                        <div id="clientGlobalContent" class="grid-posts"></div>
+                    </div>
+                </div>
 
-            <h3><i class="fas fa-user-plus"></i> Meus Conteúdos</h3>
-            <div id="clientPersonalContent" class="grid-posts"></div>
+                <!-- Minhas Notícias -->
+                <div class="client-list">
+                    <h3><i class="fas fa-newspaper"></i> Minhas Notícias</h3>
+                    <div class="client-content-wrapper">
+                        <div id="clientPersonalContent" class="grid-posts"></div>
+                    </div>
+                </div>
 
-            <div class="client-list">
-                <h3><i class="fas fa-id-card"></i> Meus Dados</h3>
-                <div id="myProfileInfo"></div>
+                <!-- Meus Dados -->
+                <div class="client-list client-full-width">
+                    <h3><i class="fas fa-id-card"></i> Meus Dados</h3>
+                    <div id="myProfileInfo" class="profile-card"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -875,23 +1078,57 @@
                     <button id="adminLogoutBtn" class="btn-secondary">Sair</button>
                 </div>
                 <div class="stats-cards" id="adminStats"></div>
-                <div class="form-add">
-                    <h3><i class="fas fa-plus-circle"></i> Adicionar Conteúdo Global</h3>
-                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
-                        <input type="text" id="adminNewTitle" placeholder="Título" style="flex:2; padding:0.8rem; border-radius:30px; border:1px solid #e0f0e0;">
-                        <select id="adminContentType" style="padding:0.8rem; border-radius:30px;">
-                            <option value="video">Vídeo</option>
-                            <option value="livro">Livro (PDF URL)</option>
-                            <option value="publicacao">Publicação</option>
-                        </select>
-                        <input type="text" id="adminNewLinkOrText" placeholder="URL ou descrição" style="flex:3; padding:0.8rem; border-radius:30px;">
-                        <button id="adminAddContentBtn" class="btn-primary" style="width:auto; padding:0.8rem 1.5rem;">Publicar</button>
+                
+                <!-- Grid do Admin com layout equilibrado -->
+                <div class="admin-panel-grid">
+                    <!-- Notícias Globais (lado esquerdo) - APENAS vídeos e livros -->
+                    <div class="client-list">
+                        <h3><i class="fas fa-globe"></i> Notícias do Mundo</h3>
+                        <p style="font-size:0.7rem; color:#999; margin-bottom:0.8rem;"><i class="fas fa-info-circle"></i> Apenas vídeos e livros - sem notícias</p>
+                        <div class="admin-content-wrapper">
+                            <div id="adminGlobalContent" class="small-grid-posts"></div>
+                        </div>
+                    </div>
+
+                    <!-- Publicar Notícias (lado direito) - com formulário -->
+                    <div class="client-list">
+                        <h3><i class="fas fa-plus-circle"></i> Publicar Notícias</h3>
+                        
+                        <!-- Formulário de publicação -->
+                        <div class="publish-news-area">
+                            <h4><i class="fas fa-pen-fancy"></i> Nova Notícia</h4>
+                            <div class="input-group" style="margin-bottom:0.5rem;">
+                                <input type="text" id="publishNewsTitle" placeholder="Título da notícia" style="width:100%; padding:0.6rem 1rem; border-radius:30px; border:1px solid #e0f0e0;">
+                            </div>
+                            <div class="input-group" style="margin-bottom:0.5rem;">
+                                <textarea id="publishNewsContent" rows="3" placeholder="Conteúdo da notícia..." style="width:100%; padding:0.6rem 1rem; border-radius:16px; border:1px solid #e0f0e0;"></textarea>
+                            </div>
+                            <div class="flex-row">
+                                <select id="publishNewsType" style="padding:0.6rem 1rem; border-radius:30px; border:1px solid #e0f0e0;">
+                                    <option value="noticia">Notícia</option>
+                                    <option value="video">Vídeo</option>
+                                    <option value="livro">Livro</option>
+                                </select>
+                                <button id="publishNewsBtn" class="btn-primary" style="width:auto; padding:0.6rem 1.5rem;"><i class="fas fa-paper-plane"></i> Publicar</button>
+                            </div>
+                            <p style="font-size:0.7rem; color:#999; margin-top:0.5rem;"><i class="fas fa-info-circle"></i> As notícias publicadas aparecem na área <strong>Minhas Notícias</strong> de todos os clientes.</p>
+                        </div>
+
+                        <!-- Lista de notícias publicadas -->
+                        <h4 style="color:#1b5e1f; margin-top:1rem;"><i class="fas fa-list"></i> Notícias Publicadas</h4>
+                        <div class="admin-content-wrapper">
+                            <div id="adminClientContents"></div>
+                        </div>
+                    </div>
+
+                    <!-- Lista de Clientes (full width) -->
+                    <div class="client-list admin-full-width">
+                        <h3><i class="fas fa-users"></i> Clientes</h3>
+                        <div class="admin-content-wrapper">
+                            <div id="adminClientList"></div>
+                        </div>
                     </div>
                 </div>
-                <h3><i class="fas fa-globe"></i> Conteúdo Global</h3>
-                <div id="adminGlobalContent" class="grid-posts"></div>
-                <div class="client-list"><h3><i class="fas fa-users"></i> Clientes</h3><div id="adminClientList"></div></div>
-                <div class="client-list"><h3><i class="fas fa-upload"></i> Conteúdos dos Clientes</h3><div id="adminClientContents"></div></div>
             </div>
         </div>
     </div>
@@ -979,9 +1216,8 @@
     function loadData() {
         registeredClients = JSON.parse(localStorage.getItem('manual_dinheiro_clients') || '[]');
         globalContent = JSON.parse(localStorage.getItem('manual_dinheiro_global') || JSON.stringify([
-            { id: 1001, type: 'video', title: 'Como Começar a Investir', content: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-            { id: 1002, type: 'livro', title: 'Manual do Dinheiro - Guia Completo', content: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf' },
-            { id: 1003, type: 'publicacao', title: 'Dica de Ouro', content: 'Invista 10% da sua renda mensal. O segredo é a consistência!' }
+            { id: 1001, type: 'video', title: '🎬 Como Começar a Investir', content: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+            { id: 1002, type: 'livro', title: '📚 A Psicologia do Dinheiro', content: 'https://www.psicologiadodinheiro.com' }
         ]));
         clientContents = JSON.parse(localStorage.getItem('manual_dinheiro_client_contents') || '[]');
     }
@@ -992,12 +1228,18 @@
     
     function escapeHtml(str) { if(!str) return ''; return str.replace(/[&<>]/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[m];}); }
     
+    function formatDate(dateStr) {
+        const d = new Date(dateStr);
+        return d.toLocaleDateString('pt-PT', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    }
+    
     function validatePassword(password) {
-        if(password.length !== 6) return false;
+        if(password.length !== 8) return false;
         const hasUpper = /[A-Z]/.test(password);
         const hasLower = /[a-z]/.test(password);
         const hasNumber = /[0-9]/.test(password);
-        return hasUpper && hasLower && hasNumber;
+        const hasSymbol = /[@#$%^&+=!?]/.test(password);
+        return hasUpper && hasLower && hasNumber && hasSymbol;
     }
     
     function openViewer(title, type, content) {
@@ -1021,7 +1263,7 @@
                 viewerContent.innerHTML = `<div style="padding:1.5rem;"><i class="fas fa-receipt fa-3x" style="color:#2e7d32;"></i><p style="margin-top:1rem;">Comprovativo de Pagamento Bancário</p><a href="${content}" target="_blank" class="btn-primary" style="display:inline-block; margin-top:1rem;">Abrir Comprovativo</a></div>`;
             }
         } else {
-            viewerContent.innerHTML = `<div style="padding:1.5rem;"><i class="fas fa-book-open fa-3x" style="color:#2e7d32;"></i><p style="margin-top:1rem;">${escapeHtml(content)}</p></div>`;
+            viewerContent.innerHTML = `<div style="padding:1.5rem; white-space:pre-wrap; line-height:1.8; font-size:1rem; max-width:800px; margin:0 auto;">${escapeHtml(content)}</div>`;
         }
         document.getElementById('viewerModal').style.display = 'flex';
     }
@@ -1107,7 +1349,7 @@
                     const book = item.volumeInfo;
                     const cover = book.imageLinks?.thumbnail || '';
                     return `<div class="api-item" onclick='addBookToContent(${JSON.stringify({title: book.title, description: book.description || "Sem descrição", cover: cover, infoLink: book.infoLink})})'>
-                                ${cover ? `<img src="${cover}" alt="capa">` : '<div style="height:140px; background:#e8f5e9; display:flex; align-items:center; justify-content:center;"><i class="fas fa-book fa-3x" style="color:#2e7d32;"></i></div>'}
+                                ${cover ? `<img src="${cover}" alt="capa">` : '<div style="height:120px; background:#e8f5e9; display:flex; align-items:center; justify-content:center;"><i class="fas fa-book fa-3x" style="color:#2e7d32;"></i></div>'}
                                 <strong>${escapeHtml(book.title || "Sem título")}</strong>
                                 <small>${book.authors ? escapeHtml(book.authors.join(', ')) : 'Autor desconhecido'}</small>
                             </div>`;
@@ -1120,27 +1362,59 @@
         const resultsDiv = document.getElementById('videoResults');
         resultsDiv.innerHTML = `<div class="loading"><i class="fab fa-youtube"></i> Buscando vídeos...</div>
             <div style="grid-column:1/-1;">
-                <iframe width="100%" height="350" src="https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(query)}" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="300" src="https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(query)}" frameborder="0" allowfullscreen></iframe>
                 <div style="margin-top:1rem;"><input type="text" id="videoUrlInput" placeholder="Cole o URL do vídeo para adicionar" style="width:100%; padding:0.7rem; border-radius:30px; border:1px solid #e0f0e0;"><button id="addVideoFromUrl" class="btn-primary" style="margin-top:0.5rem;">Adicionar Vídeo</button></div>
             </div>`;
         document.getElementById('addVideoFromUrl')?.addEventListener('click', () => {
             const url = document.getElementById('videoUrlInput')?.value;
-            if(url) addContentToPersonal('video', url, prompt("Título do vídeo:", "Meu Vídeo"));
+            if(url) {
+                const title = prompt("Título do vídeo:", "Meu Vídeo");
+                if(title) {
+                    clientContents.push({ id: Date.now(), clientId: currentClientId, type: 'video', title, content: url, dataCriacao: new Date().toISOString() }); 
+                    saveClientContents(); 
+                    renderClientPersonalContent(); 
+                    if(adminLogged) renderAdminClientContents(); 
+                    alert("Vídeo adicionado com sucesso!");
+                }
+            }
         });
     }
     
-    function addContentToPersonal(type, content, title) { if(!title) return; clientContents.push({ id: Date.now(), clientId: currentClientId, type, title, content, dataCriacao: new Date().toISOString() }); saveClientContents(); renderClientPersonalContent(); if(adminLogged) renderAdminClientContents(); alert("Conteúdo adicionado!"); }
-    function addBookToContent(book) { const title = prompt("Digite o título:", book.title); if(title) { clientContents.push({ id: Date.now(), clientId: currentClientId, type: 'livro', title, content: book.infoLink || book.description, dataCriacao: new Date().toISOString() }); saveClientContents(); renderClientPersonalContent(); if(adminLogged) renderAdminClientContents(); alert(`Livro "${title}" adicionado!`); } }
+    function addBookToContent(book) { 
+        const title = prompt("Digite o título:", book.title); 
+        if(title) { 
+            clientContents.push({ id: Date.now(), clientId: currentClientId, type: 'livro', title, content: book.infoLink || book.description, dataCriacao: new Date().toISOString() }); 
+            saveClientContents(); 
+            renderClientPersonalContent(); 
+            if(adminLogged) renderAdminClientContents(); 
+            alert(`Livro "${title}" adicionado!`); 
+        } 
+    }
     
-    function renderContentItem(item, isAdmin = false, showDelete = true) {
-        let previewHtml = item.type === 'video' ? '<i class="fab fa-youtube"></i><span>Vídeo</span>' : (item.type === 'livro' ? '<i class="fas fa-book"></i><span>Livro</span>' : '<i class="fas fa-newspaper"></i><span>Publicação</span>');
-        const deleteBtn = showDelete ? `<button class="delete-btn" data-id="${item.id}"><i class="fas fa-trash"></i> Eliminar</button>` : '';
+    function renderContentItem(item, isAdmin = false, showDelete = true, small = false) {
+        let previewHtml = '';
+        
+        if(item.type === 'video') {
+            previewHtml = '<i class="fab fa-youtube"></i><span>Vídeo</span>';
+        } else if(item.type === 'livro') {
+            previewHtml = '<i class="fas fa-book"></i><span>Livro</span>';
+        } else if(item.type === 'noticia') {
+            previewHtml = '<i class="fas fa-newspaper"></i><span>Notícia</span>';
+        } else {
+            previewHtml = '<i class="fas fa-file-alt"></i><span>Publicação</span>';
+        }
+        
+        const dateHtml = item.dataCriacao ? `<div class="media-date"><i class="far fa-calendar-alt"></i> ${formatDate(item.dataCriacao)}</div>` : '';
+        const newsBadge = item.type === 'noticia' ? `<span class="news-badge"><i class="fas fa-newspaper"></i> Notícia</span>` : '';
+        // Admin badge removida - não é mais exibida
+        
         return `<div class="media-card" onclick="openViewer('${escapeHtml(item.title).replace(/'/g, "\\'")}', '${item.type}', '${escapeHtml(item.content).replace(/'/g, "\\'")}')">
                     <div class="media-preview">${previewHtml}</div>
                     <div class="media-card-content">
                         <div class="media-title">${escapeHtml(item.title)}</div>
-                        <div class="media-description">${escapeHtml(item.content.substring(0, 70))}${item.content.length > 70 ? '...' : ''}</div>
-                        ${deleteBtn}
+                        ${dateHtml}
+                        <div class="media-description">${escapeHtml(item.content.substring(0, 60))}${item.content.length > 60 ? '...' : ''}</div>
+                        ${newsBadge}
                     </div>
                 </div>`;
     }
@@ -1148,28 +1422,36 @@
     function renderGlobalContent(containerId, isAdmin = false) {
         const container = document.getElementById(containerId);
         if(!container) return;
-        if(globalContent.length === 0) { container.innerHTML = '<div>Nenhum conteúdo.</div>'; return; }
-        container.innerHTML = globalContent.map(item => renderContentItem(item, isAdmin, isAdmin)).join('');
+        // Filtra para mostrar APENAS vídeos e livros (sem notícias)
+        const filteredContent = globalContent.filter(item => item.type === 'video' || item.type === 'livro');
+        if(filteredContent.length === 0) { 
+            container.innerHTML = '<div style="color:#999; text-align:center; padding:1rem;">Nenhum vídeo ou livro disponível.</div>'; 
+            return; 
+        }
+        container.innerHTML = filteredContent.map(item => renderContentItem(item, isAdmin, false, false)).join('');
         if(isAdmin) document.querySelectorAll('#adminGlobalContent .delete-btn').forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); const id = parseInt(btn.dataset.id); globalContent = globalContent.filter(c => c.id !== id); saveGlobalContent(); renderGlobalContent('adminGlobalContent', true); renderGlobalContent('clientGlobalContent', false); updateAdminStats(); }));
     }
     
     function renderClientPersonalContent() {
         const container = document.getElementById('clientPersonalContent');
         if(!container) return;
-        const myContents = clientContents.filter(c => c.clientId === currentClientId);
-        if(myContents.length === 0) { container.innerHTML = '<div>Nenhum conteúdo seu.</div>'; return; }
-        container.innerHTML = myContents.map(item => renderContentItem(item, false, true)).join('');
-        document.querySelectorAll('#clientPersonalContent .delete-btn').forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); const id = parseInt(btn.dataset.id); clientContents = clientContents.filter(c => c.id !== id); saveClientContents(); renderClientPersonalContent(); if(adminLogged) renderAdminClientContents(); }));
+        // Mostra todos os conteúdos do cliente + notícias do admin (fromAdmin true)
+        const allClientContent = clientContents.filter(c => c.clientId === currentClientId || c.fromAdmin === true);
+        if(allClientContent.length === 0) { 
+            container.innerHTML = '<div style="color:#999; text-align:center; padding:1rem;">Nenhuma notícia publicada.</div>'; 
+            return; 
+        }
+        container.innerHTML = allClientContent.map(item => renderContentItem(item, false, false)).join('');
     }
     
     function renderAdminClientList() {
         const container = document.getElementById('adminClientList');
         if(!container) return;
-        if(registeredClients.length === 0) { container.innerHTML = '<p>Nenhum cliente.</p>'; return; }
+        if(registeredClients.length === 0) { container.innerHTML = '<p style="color:#999; text-align:center; padding:1rem;">Nenhum cliente.</p>'; return; }
         container.innerHTML = registeredClients.map(client => {
             const hasReceipt = client.fotoBase64 ? true : false;
             const receiptBtn = hasReceipt ? `<button class="view-receipt" onclick="openViewer('Comprovativo Bancário - ${escapeHtml(client.nome)} ${escapeHtml(client.apelido)}', 'receipt', '${escapeHtml(client.fotoBase64).replace(/'/g, "\\'")}')"><i class="fas fa-receipt"></i> Ver Comprovativo</button>` : '<span style="color:#999;">Sem comprovativo</span>';
-            return `<div class="client-item">
+            return `<div class="client-item compact-client-item">
                         <div class="client-info">
                             ${client.fotoBase64 ? (client.fileType === 'application/pdf' ? '<i class="fas fa-file-pdf fa-2x" style="color:#e74c3c;"></i>' : `<img src="${client.fotoBase64}" class="small-img" onclick="openViewer('Comprovativo Bancário - ${escapeHtml(client.nome)}', 'receipt', '${escapeHtml(client.fotoBase64).replace(/'/g, "\\'")}')">`) : '<i class="fas fa-user-circle fa-2x"></i>'}
                             <div>
@@ -1190,14 +1472,35 @@
     function renderAdminClientContents() {
         const container = document.getElementById('adminClientContents');
         if(!container) return;
-        if(clientContents.length === 0) { container.innerHTML = '<p>Nenhum conteúdo.</p>'; return; }
-        container.innerHTML = clientContents.map(item => { const client = registeredClients.find(c => c.id === item.clientId); return `<div style="border:1px solid #e0f0e0; border-radius:16px; padding:0.8rem; margin-bottom:0.5rem;"><strong>${item.title}</strong><br><small>${client?.nome} ${client?.apelido}</small><p>${item.content.substring(0,80)}</p><button class="delete-client-content" data-id="${item.id}" style="background:#dc3545; color:white; border:none; border-radius:20px; padding:0.2rem 0.8rem;">Eliminar</button></div>`; }).join('');
+        if(clientContents.length === 0) { container.innerHTML = '<p style="color:#999; text-align:center; padding:1rem;">Nenhuma notícia publicada.</p>'; return; }
+        container.innerHTML = clientContents.map(item => { 
+            const client = registeredClients.find(c => c.id === item.clientId); 
+            const typeLabel = item.type === 'noticia' ? '📰 Notícia' : (item.type === 'video' ? '🎬 Vídeo' : '📚 Livro');
+            // Admin badge removida
+            return `<div style="border:1px solid #e0f0e0; border-radius:16px; padding:0.8rem; margin-bottom:0.5rem;">
+                        <strong>${item.title}</strong><br>
+                        <small>${client?.nome} ${client?.apelido || 'Admin'}</small>
+                        <span style="font-size:0.7rem; color:#2e7d32; margin-left:0.5rem;">${typeLabel}</span>
+                        <p style="font-size:0.8rem; color:#666; margin-top:0.3rem;">${item.content.substring(0,80)}</p>
+                        <button class="delete-client-content" data-id="${item.id}" style="background:#dc3545; color:white; border:none; border-radius:20px; padding:0.2rem 0.8rem;">Eliminar</button>
+                    </div>`; 
+        }).join('');
         document.querySelectorAll('.delete-client-content').forEach(btn => btn.addEventListener('click', () => { clientContents = clientContents.filter(c => c.id !== parseInt(btn.dataset.id)); saveClientContents(); renderAdminClientContents(); if(currentClientId) renderClientPersonalContent(); }));
     }
     
-    function updateAdminStats() { const statsDiv = document.getElementById('adminStats'); if(statsDiv) statsDiv.innerHTML = `<div class="stat-card"><i class="fas fa-users fa-2x"></i><h3>${registeredClients.length}</h3><p>Clientes</p></div><div class="stat-card"><i class="fas fa-globe fa-2x"></i><h3>${globalContent.length}</h3><p>Conteúdos</p></div><div class="stat-card"><i class="fas fa-upload fa-2x"></i><h3>${clientContents.length}</h3><p>Posts</p></div>`; }
+    function updateAdminStats() { const statsDiv = document.getElementById('adminStats'); if(statsDiv) statsDiv.innerHTML = `<div class="stat-card"><i class="fas fa-users fa-2x"></i><h3>${registeredClients.length}</h3><p>Clientes</p></div><div class="stat-card"><i class="fas fa-globe fa-2x"></i><h3>${globalContent.filter(item => item.type === 'video' || item.type === 'livro').length}</h3><p>Vídeos/Livros</p></div><div class="stat-card"><i class="fas fa-upload fa-2x"></i><h3>${clientContents.length}</h3><p>Posts</p></div>`; }
     
-    function renderClientProfile() { const client = registeredClients.find(c => c.id === currentClientId); if(client) document.getElementById('myProfileInfo').innerHTML = `<div style="background:#e8f5e9; padding:1rem; border-radius:16px;"><strong>${client.nome} ${client.apelido}</strong><br>${client.profissao}, ${client.idade} anos<br><i class="fas fa-envelope"></i> ${client.email}<br><i class="fas fa-bullseye"></i> ${client.objetivo}</div>`; document.querySelector('#welcomeUserName span').innerText = client ? `${client.nome} ${client.apelido}` : ''; }
+    function renderClientProfile() { 
+        const client = registeredClients.find(c => c.id === currentClientId); 
+        if(client) document.getElementById('myProfileInfo').innerHTML = `
+            <p><strong>${client.nome} ${client.apelido}</strong></p>
+            <p><i class="fas fa-briefcase"></i> ${client.profissao}</p>
+            <p><i class="fas fa-calendar-alt"></i> ${client.idade} anos</p>
+            <p><i class="fas fa-envelope"></i> ${client.email}</p>
+            <p><i class="fas fa-bullseye"></i> ${client.objetivo}</p>
+        `; 
+        document.querySelector('#welcomeUserName span').innerText = client ? `${client.nome} ${client.apelido}` : ''; 
+    }
     
     let tempClientData = {}, capturedFile = null, capturedFileName = '', capturedFileType = '';
     function resetCadastroFlow() { 
@@ -1288,9 +1591,8 @@
         if(!email) return alert("Digite seu email.");
         if(!email.includes('@')) return alert("Digite um email válido.");
         if(!password) return alert("Digite uma senha.");
-        if(!validatePassword(password)) return alert("A senha deve ter exatamente 6 dígitos, contendo pelo menos 1 letra maiúscula, 1 minúscula e 1 número. Exemplo: Abc123");
+        if(!validatePassword(password)) return alert("A senha deve ter exatamente 8 caracteres, contendo pelo menos 1 letra maiúscula, 1 minúscula, 1 número e 1 símbolo (@, #, $, !, etc). Exemplo: Abc@1234");
         
-        // Verificar se email já existe
         if(registeredClients.some(c => c.email === email)) {
             alert("Este email já está cadastrado. Faça login ou use outro email.");
             return;
@@ -1313,6 +1615,15 @@
             fileInput.value = '';
             return;
         }
+        const fileName = f.name.toLowerCase();
+        const bankKeywords = ['comprovativo', 'comprovante', 'transferencia', 'transferência', 'pagamento', 'banco', 'millennium', 'bai', 'bank', 'receipt', 'payment', 'mbway', 'multicaixa'];
+        const hasBankKeyword = bankKeywords.some(keyword => fileName.includes(keyword));
+        if (!hasBankKeyword && f.size < 20000) {
+            alert("❌ O arquivo parece não ser um comprovativo bancário válido. Certifique-se de enviar um comprovativo de transferência bancária.");
+            fileInput.value = '';
+            return;
+        }
+        
         capturedFileName=f.name; capturedFileType=f.type; 
         let r=new FileReader(); 
         r.onload=(ev)=>{capturedFile=ev.target.result; 
@@ -1329,7 +1640,25 @@
     document.getElementById('searchVideosBtn')?.addEventListener('click',()=>{let q=document.getElementById('videoSearchQuery').value; if(q) searchVideos(q);});
     document.getElementById('adminLoginBtn')?.addEventListener('click',()=>{if(document.getElementById('adminEmail').value===ADMIN_CREDENTIALS.email && document.getElementById('adminPassword').value===ADMIN_CREDENTIALS.password){adminLogged=true; document.getElementById('adminLoginArea').style.display='none'; document.getElementById('adminPanelArea').style.display='block'; renderGlobalContent('adminGlobalContent',true); renderAdminClientList(); renderAdminClientContents(); updateAdminStats();} else alert("Credenciais incorretas!");});
     document.getElementById('adminLogoutBtn')?.addEventListener('click',()=>{adminLogged=false; document.getElementById('adminLoginArea').style.display='block'; document.getElementById('adminPanelArea').style.display='none';});
-    document.getElementById('adminAddContentBtn')?.addEventListener('click',()=>{let t=document.getElementById('adminNewTitle').value.trim(), ty=document.getElementById('adminContentType').value, c=document.getElementById('adminNewLinkOrText').value.trim(); if(!t||!c) return alert("Preencha"); globalContent.push({id:Date.now(),type:ty,title:t,content:c}); saveGlobalContent(); renderGlobalContent('adminGlobalContent',true); renderGlobalContent('clientGlobalContent',false); updateAdminStats(); document.getElementById('adminNewTitle').value=''; document.getElementById('adminNewLinkOrText').value=''; alert("Conteúdo publicado!");});
+    
+    // Publicar notícia - vai APENAS para Minhas Notícias
+    document.getElementById('publishNewsBtn')?.addEventListener('click',()=>{
+        let t=document.getElementById('publishNewsTitle').value.trim(); 
+        let c=document.getElementById('publishNewsContent').value.trim(); 
+        let ty=document.getElementById('publishNewsType').value;
+        if(!t||!c) return alert("Preencha o título e o conteúdo da notícia.");
+        
+        // Adiciona à lista de conteúdos com fromAdmin: true - vai aparecer em "Minhas Notícias" de todos
+        clientContents.push({id:Date.now(), clientId: 0, type:ty, title:t, content:c, fromAdmin: true, dataCriacao: new Date().toISOString()});
+        saveClientContents();
+        renderClientPersonalContent();
+        renderAdminClientContents();
+        updateAdminStats(); 
+        document.getElementById('publishNewsTitle').value=''; 
+        document.getElementById('publishNewsContent').value=''; 
+        alert("Notícia publicada com sucesso! Aparecerá na área 'Minhas Notícias' de todos os clientes.");
+    });
+    
     document.getElementById('switchToAdminMode')?.addEventListener('click',()=>{document.getElementById('clientLoginScreen').classList.add('hidden'); document.getElementById('clientCadastroScreen').classList.add('hidden'); document.getElementById('clientInternalArea').classList.add('hidden'); document.getElementById('adminScreen').classList.remove('hidden'); document.querySelector('#switchToAdminMode').classList.add('active'); document.querySelector('#switchToClientMode').classList.remove('active');});
     document.getElementById('switchToClientMode')?.addEventListener('click',()=>{document.getElementById('adminScreen').classList.add('hidden'); showClientLoginScreen(); document.querySelector('#switchToClientMode').classList.add('active'); document.querySelector('#switchToAdminMode').classList.remove('active');});
     document.getElementById('closeModalBtn')?.addEventListener('click',()=>document.getElementById('viewerModal').style.display='none');
@@ -1363,7 +1692,6 @@
     checkClientSession(); 
     renderGlobalContent('clientGlobalContent',false);
     window.addBookToContent = addBookToContent; 
-    window.addContentToPersonal = addContentToPersonal; 
     window.openViewer = openViewer;
 </script>
 </body>
